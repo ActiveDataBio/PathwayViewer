@@ -1,11 +1,12 @@
 # PathwayViewer
 
 The html is fairly basic and has a script at the bottom that creates a KeggPathway object.  
-When loading the html from the web browser it requires a kegg pathway id in the url query.
+When loading the html from the web browser it requires a kegg pathway id and cluster id in the url query.
 Example:
 ```
-<url>/pathway.html?id=hsa04512
+<url>/pathway.html?id=hsa04512&node=node1662
 ```
+The node is the id for the cluster of pretiens.  
 To make the code work for you there are a few things that would need to be changed in [kegg-pathway2.js](js/kegg-pathway2.js). The [DownloadFile function on Line 36](js/kegg-pathway2.js#L36-L44) would need to be changed to download from your rest api. 
 Each of the following lines of code use the downloadFile function to retreive the required files and display the map properly:
 * [Line 1015](js/kegg-pathway2.js#L1015) for matrix.csv
@@ -20,7 +21,7 @@ This is a matrix of protein expression values with sample ids in the first row a
 This file is a tab delimited table with meta information about samples with sample ids in the first column and meta info ids in the first row.
 
 ####dendro_row.json
-This file is a hierarchical structure of the genes in a json format. This is used for a dendrogram in the heat map view and here to find the groups of proteins.
+This file is a hierarchical structure of the genes in a json format. This is used for a dendrogram in the heat map view and here to find the cluster of proteins.
 
 ####background.csv
 This file is a conversion table to map the ids on the matrix to the ids in the kegg pathway.
