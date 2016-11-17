@@ -17,7 +17,7 @@ Each of the following lines of code use the downloadFile function to retreive th
 This is a matrix of protein expression values with sample ids in the first row and gene ids in the first column. We use this to color our heat map on a gradient scale from red to blue.
 
 ####metadata.tsv
-This file is a tab dilimited table with meta information about samples with sample ids in the first column and meta info ids in the first row.
+This file is a tab delimited table with meta information about samples with sample ids in the first column and meta info ids in the first row.
 
 ####dendro_row.json
 This file is a hierarchical structure of the genes in a json format. This is used for a dendrogram in the heat map view and here to find the groups of proteins.
