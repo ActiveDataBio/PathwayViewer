@@ -26,6 +26,6 @@ This file is a heirachical structure of the genes in a json format
 this file contains a table to map the ids on the matrix to the ids in the kegg pathway
 
 ###More information
-[More information about matrix.csv, dendro_row.json](https://github.com/ActiveDataBio/adbio_tutorial/blob/master/tutorial_1_generate_rdata.ipynb)
-[More information about metatdata files](https://github.com/ActiveDataBio/adbio_tutorial/blob/master/tutorial_2_metadata.ipynb)
-[More information about background.csv](https://github.com/ActiveDataBio/adbio_tutorial/blob/master/background.md)
+[More information about matrix.csv, dendro_row.json](https://github.com/ActiveDataBio/adbio_tutorial/blob/master/tutorial_1_generate_rdata.ipynb)  
+[More information about metatdata files](https://github.com/ActiveDataBio/adbio_tutorial/blob/master/tutorial_2_metadata.ipynb)  
+[More information about background.csv](https://github.com/ActiveDataBio/adbio_tutorial/blob/master/background.md)  
