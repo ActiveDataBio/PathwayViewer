@@ -1,0 +1,14 @@
+#player .progress-button {
+    /* background: #fff; */
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    border-radius: 30px;
+    width: 4px;
+    height: 24px;
+    position: absolute;
+	display: inline-block;
+    text-decoration: overline;
+    cursor: pointer;
+}
+#pathway-controller {
+	width:700px;
+}

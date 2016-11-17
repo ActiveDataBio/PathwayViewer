@@ -1,0 +1,22 @@
+.pin-msg {
+	left: 150%;
+	overflow: hidden;
+	position: fixed;
+	width: 40%;
+	opacity: 0.9;
+	z-index: 1050;
+	transition: left 0.6s ease-out 0s;
+}
+
+.pin-msg.in {
+	left: 50%;
+}
+
+.pin-msg-centered {
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.pin-msg-bottom {
+	bottom: 20px;
+}

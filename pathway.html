@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Active Data | Pathway</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Active Canvas">
+<meta name="author" content="Joon-Yong Lee">
+
+<!-- Style sheets -->
+<link rel="stylesheet" href="webjars/Semantic-UI/semantic.min.css">
+<link rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" href="css/userAlerter.css">
+
+<!-- Scripts -->
+<script   src="https://code.jquery.com/jquery-1.12.3.js"   integrity="sha256-1XMpEtA4eKXNNpXcJ1pmMPs8JV+nwLdEqwiJeCQEkyc="   crossorigin="anonymous"></script>
+<script src="webjars/jquery-cookie/jquery.cookie.js"></script>
+<script src="lib/semantic.min.js"></script>
+<!-- DataTables CSS-->
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.11/css/dataTables.semanticui.min.css" type="text/css"/>
+<!-- DataTables Scripts-->
+<script src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+<script src="//cdn.datatables.net/1.10.11/js/dataTables.semanticui.min.js"></script>
+<!-- Highcharts -->
+<script src="//code.highcharts.com/highcharts.js"></script>
+<script src="//code.highcharts.com/highcharts-more.js"></script>
+<script src="//code.highcharts.com/stock/modules/exporting.js"></script>
+<!-- <link type="text/css" rel="stylesheet" href="js/colorbrewer.js"/> -->
+
+<script
+	src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="css/d3-kegg-menu.css">
+<link rel="stylesheet" href="css/pin-2-canvas.css">
+<link rel="stylesheet" href="css/nav-header.css">
+<link rel="stylesheet" href="css/kegg-animation.css">
+<link rel="stylesheet" href="css/userAlerter.css">
+
+<style type="text/css">
+.ui.modal>.close {
+	top: 1rem;
+    right: 0.5rem;
+}
+
+rect.entry.active {
+	opacity: 0.4;
+	stroke: black;
+    stroke-width: 1;
+}
+
+
+rect.entry {
+	opacity: 0.9;
+	stroke: white;
+    stroke-width: 3;
+    
+}
+
+rect.roundRec.entry {
+	opacity: 0.4;
+}
+
+rect.entry:hover {
+	opacity: 0.2;
+	cursor: pointer;
+}
+
+circle.entry.active {
+	opacity: 0.6;
+}
+
+circle.entry {
+	opacity: 0.9;
+}
+
+circle.entry:hover {
+	opacity: 0.2;
+	cursor: pointer;
+}
+
+path.entry {
+	opacity: 0.9;
+	fill: none;
+	stroke: none;
+	stroke-width: 3px;
+	cursor: pointer;
+}
+
+path.entry:hover {
+	opacity: 0.2;
+	stroke-width: 3px;
+}
+
+.modal.fade.ui-draggable-dragging {
+	-moz-transition: none;
+	-o-transition: none;
+	-webkit-transition: none;
+	transition: none;
+}
+
+.modal.fade.nofly {
+	top: 10%;
+	-webkit-transition: opacity 0.3s linear;
+	-moz-transition: opacity 0.3s linear;
+	-o-transition: opacity 0.3s linear;
+	transition: opacity 0.3s linear;
+}
+
+body.modal-open {
+	overflow: auto;
+}
+
+/*.viewer {
+  padding-top: 60pt;
+}*/
+.form-group>label {
+	margin: 0 1em;
+}
+</style>
+<!-- Icon in the address bar -->
+<link rel="shortcut icon" type="image/png"
+	href="images/ActiveData icons_pathway 50px.png" />
+</head>
+<body>
+	<!-- Server Side Include of a html file so we don't have to keep writing the same code over and over -->
+	<!--#include file="navbar"-->
+	<div id="navbar"></div>
+	<div id="kegg"></div>
+
+	<div class="ui loading segment" style="overflow:auto">
+		<div id="pathway-controller" class="ui message">
+			<div class="ui group field" style="display:none;">
+				<div class="ui sub header">Group</div>
+				<div class="ui selection fluid dropdown">
+   					<div class="text"></div>
+   					<i class="dropdown icon"></i>
+   					<div class="menu"></div>
+   				</div>
+ 			</div>
+			<div class="ui items">
+              <div id="progress_container" style="display:none;">
+              </div>
+              <div class="ui item" style="display:none;">
+                <div id ="player" class="ui icon buttons" role="group" aria-label="..." ></div>
+              </div>
+              
+			</div>
+		</div>
+		<div class="row clearfix">
+			<div id="pathway"></div>
+		</div>
+		<div id='phylogram'></div>
+	</div>
+	<div id="modal_container"></div>
+
+	<!-- D3 -->
+	<!-- <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script> -->
+	<script src="webjars/d3js/d3.min.js"
+		charset="utf-8"></script>
+
+	<script
+		src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+		
+	<script src="js/adbio.color.js"></script>
+	<!-- script src="js/UILogger.js"></script-->
+	<script src="js/kegg-animation.js"></script>
+	<script src="js/kegg-pathway2.js"></script>
+	<script src="js/d3-kegg-menu.js"></script>
+	<script src="js/jquery-mini-graph.js"></script>
+	<script src="js/jquery-highchart.js"></script>
+	<!-- script src="js/userAlerter.js"></script-->
+	<script src="js/pin-2-canvas.js"></script>
+	<!-- script src="js/jquery.cookie.js"></script>
+	<script src="js/githubJQ.js"></script>
+	<script src="js/adbio.login.js"></script-->
+	<script src="js/adbio.credentials.js"></script>
+	  <script src="js/adbio.pathway.modal.js"></script>
+	<script src="js/adbio.user.preference.js"></script>
+	<script src="js/adbio.nav.menu.js"></script>
+	<script src="js/newick.js"></script>
+	<script src="js/d3.phylogram.js"></script>
+	
+	<!-- velocity -->
+	<script src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+	<script type="text/javascript">
+  $( document ).ready(function() {
+	  
+    function getURLParameter(name) {
+      return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
+    }
+
+    var pathwayNode = getURLParameter('node');
+    var pathwayId = getURLParameter('id');
+    var repo = getURLParameter('repo');
+    var host = getURLParameter('host');
+    $.ajax({
+  	  url:'git/repo/'+repo+'?host='+host,
+  	  dataType : 'json'}).done(function(server_data){
+  		  var project = server_data;
+  		  if(!window.navHeader)
+  			  window.navHeader = new NavHeader(window.credentials,project,'Pathway');
+  		$().pathwayChooser(project);
+  	  });
+    //if (!window.login)
+    //	window.login = new ADClogin();
+    //window.login.ready(function(user,github,pathwayId,pathwayNode){
+      //window.login.getAuthenticatedUser(false, function (data) {
+        //var data = window.login.user;
+       // if (user) {
+         //window.navHeader.getHeaderMenu(null, "Pathway");
+          //var github = githubJQ();
+         // github.setAuthParms(window.login.getAuthParams());
+         // github.setRepoParms(window.login.getRepoParams());
+          var keggPathway = new KeggPathway(repo, pathwayId, "kegg", "pathway", "pathway-name", pathwayNode);
+          keggPathway.drawPathway();
+        //}
+      //});
+    //});
+   
+    //sets onclick function for pin link within NavBar. Probably poor practice to put this in this file, but I couldn't get it to work otherwise
+    /* $('#pinLink').on("click", function() {
+        var query = {};
+        query.label = id;
+        query.data = "" + ";"+id+";"+node; //copied this format from heatmap.js Not sure why the first element is blank
+        query.type = "PATHWAY";
+        pin2Canvas.pinEntity(query);
+
+    }); */
+    
+  });
+  </script>
+
+</body>
+</html>
