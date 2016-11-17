@@ -764,7 +764,7 @@ KeggPathway.prototype.drawPathway = function() {
       var re = new RegExp(org, 'g');
       imagePath = imagePath.replace(re, 'map');
 
-      svg.append("image").attr("width", 0).attr("height", 0)
+      svg.append("image").attr("width" , window.screen.width).attr("height", window.screen.height)
       .attr("xlink:href", imagePath);
 
       // for genes in rects
