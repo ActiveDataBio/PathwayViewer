@@ -6,9 +6,8 @@ Example:
 ```
 <url>/pathway.html?id=hsa04512
 ```
-To make the code work for you there are a few things that would need to be changed.  
-<!--On [line 1012](js/kegg-pathway2.js#L1012-L1055) this is where the raw data is downloaded from. -->The changes needed are in [kegg-pathway2.js](js/kegg-pathway2.js). The [DownloadFile function on Line 36](js/kegg-pathway2.js#L36-L44) would need to be changed to download from your rest api. 
-Each of the following lines of code use the downloadFile function to get a file that is required to display the map properly:
+To make the code work for you there are a few things that would need to be changed in [kegg-pathway2.js](js/kegg-pathway2.js). The [DownloadFile function on Line 36](js/kegg-pathway2.js#L36-L44) would need to be changed to download from your rest api. 
+Each of the following lines of code use the downloadFile function to retreive the required files and display the map properly:
 * [Line 1015](js/kegg-pathway2.js#L1015) for matrix.csv
 * [Line 964](js/kegg-pathway2.js#L964) for dendro_row.json
 * [Line 969](js/kegg-pathway2.js#L969) for background.csv
