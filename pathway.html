@@ -9,30 +9,28 @@
 <meta name="author" content="Joon-Yong Lee">
 
 <!-- Style sheets -->
-<link rel="stylesheet" href="webjars/Semantic-UI/semantic.min.css">
-<link rel="stylesheet" href="css/login.css">
-<link rel="stylesheet" href="css/userAlerter.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css">
+<!--link rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" href="css/userAlerter.css"-->
 
 <!-- Scripts -->
 <script   src="https://code.jquery.com/jquery-1.12.3.js"   integrity="sha256-1XMpEtA4eKXNNpXcJ1pmMPs8JV+nwLdEqwiJeCQEkyc="   crossorigin="anonymous"></script>
-<script src="webjars/jquery-cookie/jquery.cookie.js"></script>
-<script src="lib/semantic.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.js"></script>
 <!-- DataTables CSS-->
-<link rel="stylesheet" href="//cdn.datatables.net/1.10.11/css/dataTables.semanticui.min.css" type="text/css"/>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/dataTables.semanticui.min.css" type="text/css"/>
 <!-- DataTables Scripts-->
-<script src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
-<script src="//cdn.datatables.net/1.10.11/js/dataTables.semanticui.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.11/js/dataTables.semanticui.min.js"></script>
 <!-- Highcharts -->
-<script src="//code.highcharts.com/highcharts.js"></script>
-<script src="//code.highcharts.com/highcharts-more.js"></script>
-<script src="//code.highcharts.com/stock/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
 <!-- <link type="text/css" rel="stylesheet" href="js/colorbrewer.js"/> -->
 
 <script
-	src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 <link rel="stylesheet" href="css/d3-kegg-menu.css">
-<link rel="stylesheet" href="css/pin-2-canvas.css">
-<link rel="stylesheet" href="css/nav-header.css">
 <link rel="stylesheet" href="css/kegg-animation.css">
 <link rel="stylesheet" href="css/userAlerter.css">
 
@@ -118,8 +116,8 @@ body.modal-open {
 }
 </style>
 <!-- Icon in the address bar -->
-<link rel="shortcut icon" type="image/png"
-	href="images/ActiveData icons_pathway 50px.png" />
+<!--link rel="shortcut icon" type="image/png"
+	href="images/ActiveData icons_pathway 50px.png" /-->
 </head>
 <body>
 	<!-- Server Side Include of a html file so we don't have to keep writing the same code over and over -->
@@ -155,11 +153,11 @@ body.modal-open {
 
 	<!-- D3 -->
 	<!-- <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script> -->
-	<script src="webjars/d3js/d3.min.js"
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js"
 		charset="utf-8"></script>
 
 	<script
-		src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+		src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 		
 	<script src="js/adbio.color.js"></script>
 	<!-- script src="js/UILogger.js"></script-->
@@ -169,19 +167,19 @@ body.modal-open {
 	<script src="js/jquery-mini-graph.js"></script>
 	<script src="js/jquery-highchart.js"></script>
 	<!-- script src="js/userAlerter.js"></script-->
-	<script src="js/pin-2-canvas.js"></script>
+	<!--script src="js/pin-2-canvas.js"></script-->
 	<!-- script src="js/jquery.cookie.js"></script>
 	<script src="js/githubJQ.js"></script>
 	<script src="js/adbio.login.js"></script-->
-	<script src="js/adbio.credentials.js"></script>
+	<!--script src="js/adbio.credentials.js"></script>
 	  <script src="js/adbio.pathway.modal.js"></script>
 	<script src="js/adbio.user.preference.js"></script>
 	<script src="js/adbio.nav.menu.js"></script>
 	<script src="js/newick.js"></script>
-	<script src="js/d3.phylogram.js"></script>
+	<script src="js/d3.phylogram.js"></script-->
 	
 	<!-- velocity -->
-	<script src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
 	<script type="text/javascript">
   $( document ).ready(function() {
 	  
@@ -192,7 +190,7 @@ body.modal-open {
     var pathwayNode = getURLParameter('node');
     var pathwayId = getURLParameter('id');
     var repo = getURLParameter('repo');
-    var host = getURLParameter('host');
+    /*var host = getURLParameter('host');
     $.ajax({
   	  url:'git/repo/'+repo+'?host='+host,
   	  dataType : 'json'}).done(function(server_data){
@@ -200,7 +198,7 @@ body.modal-open {
   		  if(!window.navHeader)
   			  window.navHeader = new NavHeader(window.credentials,project,'Pathway');
   		$().pathwayChooser(project);
-  	  });
+  	  });*/
     //if (!window.login)
     //	window.login = new ADClogin();
     //window.login.ready(function(user,github,pathwayId,pathwayNode){
