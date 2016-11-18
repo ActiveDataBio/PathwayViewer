@@ -1,5 +1,7 @@
 # PathwayViewer
 
+There are four basic parts of this webpage: html, javascript, webservice, and associated files.
+
 The html is fairly basic and has a script at the bottom that creates a KeggPathway object.  
 When loading the html from the web browser it requires a kegg pathway id and cluster id in the url query.
 Example:
