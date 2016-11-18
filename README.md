@@ -1,4 +1,5 @@
 # PathwayViewer
+This repository represents the skeleton of what is used by us in the Active Data Biology pathway views ([website] (https://adbio.pnnl.gov) or [tutorial video] (https://www.youtube.com/watch?v=LU280SWWFUc)). ADBio has a fairly complex set of interactions beyond simply drawing a KEGG map, and our javascript is therefore a bit more complicated than you might expect.
 
 There are four basic parts of this webpage: html, javascript, webservice, and associated files. The html page sets the basic framework. The javascript is code meant to help identify which protiens on the page should be highlighted and where those colored pixels go to overlay the KEGG map. The webservice is how the javascript communicates to the KEGG database. And associated files are explained below.
 
