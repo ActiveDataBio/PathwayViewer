@@ -19,6 +19,8 @@ Each of the following lines of code use the downloadFile function to retreive th
 * [Line 969](js/kegg-pathway2.js#L969) for background.csv
 * [Line 1186](js/kegg-pathway2.js#L1186) for metadata.tsv
 
+The javascript interacts with a database to request a KGML file (which we create on the fly because it saves db space) which describes the image of a pathway. That means that the KGML says where the box for each gene is on the image. That's the information we use to create our SVG colored overlay.
+
 ####matrix.csv
 This is a matrix of protein expression values with sample ids in the first row and gene ids in the first column. We use this to color our heat map on a gradient scale from red to blue. we also use this information for the pop-up high-charts that show the average expression by sub-type. If you are only using one color to overlay the kegg image, then you probably don't need this information.
 
@@ -29,7 +31,7 @@ This file is a tab delimited table with meta information about samples with samp
 This file is a hierarchical structure of the genes in a json format. This is used for a dendrogram in the heat map view and here to find which protein belong to the specified node (and thus which should be drawn).
 
 ####background.csv
-This file is a conversion table to map the ids on the matrix to the ids in the kegg pathway.
+This file is a conversion table to map the ids on the matrix to the ids in the kegg pathway. Specifically this contains the gene name, which is what the KGML uses instead of accessions.
 
 ###More information
 [More information about matrix.csv, dendro_row.json](https://github.com/ActiveDataBio/adbio_tutorial/blob/master/tutorial_1_generate_rdata.ipynb)  
