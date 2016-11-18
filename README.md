@@ -8,7 +8,7 @@ Example:
 ```
 <url>/pathway.html?id=hsa04512&node=node1662
 ```
-The node is the id for the cluster of pretiens.  
+The node is the id for the cluster of protiens, somethign specific to our application.  
 To make the code work for you there are a few things that would need to be changed in [kegg-pathway2.js](js/kegg-pathway2.js). The [DownloadFile function on Line 36](js/kegg-pathway2.js#L36-L44) would need to be changed to download from your rest api. 
 Each of the following lines of code use the downloadFile function to retreive the required files and display the map properly:
 * [Line 1015](js/kegg-pathway2.js#L1015) for matrix.csv
